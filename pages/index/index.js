@@ -15,40 +15,66 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+  onLoad: async function () {
+    
+    //wx.showToast({
+      //title: '加载中',
+      //icon: 'loading',
+      //duration: 10000
+    //});
+
+    async function getRestaurants() {
+      // console.log("=== getRestaurants ===")
+      var tipeData = (await getTipe('5b4db7d2508973001336b623'))
+      0
+      var ret = []
+      var docs = tipeData.data.blocks[0].value
+      for (i in docs) {
+        docId = docs[i].value.id
+        blocks = docs[i].value.blocks
+        // WeChat resolves an Array as an Object of numbers
+        // if the items are Objects
+        // so that we have to use "docs[i].value.id" instead of "i.value.id"
+        // Stupid!
+        ret.push({
+          "name": getBlockFromBlocks(blocks, "name"),
+          "id": getBlockFromBlocks(blocks, "id"),
+          "photo": getBlockFromBlocks((await getTipe(docId)).data.blocks, "photo").url,
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+      return ret;
+    }
+
+    function getTipe(DOCUMENT_ID) {
+      // Tipe REST API
+      var YOUR_ORG_SECRET_KEY = 'NWFiMmVkZjVkZDZhMmUwMDEzYWRiNzRl'
+      var YOUR_API_KEY = 'ARMKDNAA1ZNKV2RSJFG6MQYD6' // Generated-API-Key-1521675799392
+      return new Promise((resolve, reject) => {
+        wx.request({
+          url: 'https://api.tipe.io/api/v1/document/' + DOCUMENT_ID,
+          data: {
+          },
+          header: {
+            'content-type': 'application/json', // 默认值
+            'Authorization': YOUR_API_KEY,
+            'Tipe-Id': YOUR_ORG_SECRET_KEY,
+          },
+          success: resolve
+        })
       })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+
+    function getBlockFromBlocks(blocks, name) {
+      for (i in blocks) {
+        if (blocks[i].name == name)
+          return blocks[i].value
+      }
+      return null
+    }
+
+    var restaurants = await getRestaurants()
+    console.log(restaurants)
+
   }
+  
 })

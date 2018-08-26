@@ -1,13 +1,16 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class = "page-header">
+  <text class = "page-headerText">餐厅列表 </text>
 </view>
+
+<scroll-view class = "page-body" scroll-y = "true">
+  <navigator url = "../info/info" wx:for = "restaurants" wx:for-item = "i"> 
+    <view class = "item"> 
+      <image class = "page-photo" src = "{{restaurants[i].photo}}"> </image>
+      <view class = "page-word">
+        <text class = "title">{{" 餐厅名字："+restaurants[i].name}}</text>
+        <text class = "idNumber">{{" ID："+restaurants[i].id}}</text>
+      </view>
+    </view>
+  </navigator>
+</scroll-view>
+

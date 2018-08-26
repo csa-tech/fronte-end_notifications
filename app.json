@@ -1,12 +1,35 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/info/info",
+    "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "CSA 外卖",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "餐厅",
+        "iconPath": "images/restaurant.png",
+        "selectedIconPath": "images/restaurant.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "详情",
+        "iconPath": "images/menu.png",
+        "selectedIconPath": "images/menu.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile.png"
+      }
+    ]
   }
 }
