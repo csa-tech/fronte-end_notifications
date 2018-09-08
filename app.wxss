@@ -18,15 +18,15 @@ page{
 
 .page-header{
   display: flex;
-  justify-content: center;
-  border-bottom: 2rpx solid #ccc;
+  background-color:#A9A9A9;
+  border-bottom: 2rpx solid #A9A9A9;
   margin-bottom: 10rpx;
 
 }
 
 .page-headerText{
   padding: 20rpx 40rpx;
-  color: #999;
+  color: #000;
   font-size: 40rpx;
 }
 
@@ -40,12 +40,14 @@ page{
   display: flex;
   padding: 20rpx 40rpx;
   border-bottom: 2rpx solid #eee;
+  border-bottom-width: 10rpx;
 
 }
 
 .item .page-photo{
-  width: 150rpx;
-  height: 150rpx;
+  width: 160rpx;
+  height: 160rpx;
+  padding: 5rpx;
 }
 
 .item .page-word{
@@ -58,9 +60,16 @@ page{
 }
 
 .item .title{
-  font-size: 40rpx;
+  font-size: 35rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20rpx;
+  font-weight: bold;
 }
 
 .item .idNumber{
   font-size: 30rpx;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: 20rpx;
+  color:#999;
+  
 }

@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    restaurants: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -72,8 +73,9 @@ Page({
       return null
     }
 
-    var restaurants = await getRestaurants()
-    console.log(restaurants)
+    var restaurantsData = await getRestaurants();
+    this.setData({restaurants: restaurantsData})
+    console.log(restaurantsData)
 
   }
   

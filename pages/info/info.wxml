@@ -1,2 +1,7 @@
 <!--pages/info/info.wxml-->
-<text>pages/info/info.wxml</text>
+<scroll-view class = "info-body" scroll-y = "true">
+  <view class ="info-item">
+    <image class = "info-photo" src = "{{restaurants.photo}}"></image>
+    <text class = "info-name">{{"餐厅名字：" +restaurants.name}}</text>
+  </view>
+</scroll-view>

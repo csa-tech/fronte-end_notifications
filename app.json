@@ -1,4 +1,4 @@
-{
+ {
   "pages":[
     "pages/index/index",
     "pages/info/info",
@@ -7,10 +7,12 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "CSA 外卖",
+    "navigationBarTitleText": "Restaurants",
     "navigationBarTextStyle":"white"
   },
   "tabBar":{
+    
+    
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -23,6 +25,7 @@
         "text": "详情",
         "iconPath": "images/menu.png",
         "selectedIconPath": "images/menu.png"
+        
       },
       {
         "pagePath": "pages/profile/profile",

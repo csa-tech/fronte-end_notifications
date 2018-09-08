@@ -1,14 +1,15 @@
-<view class = "page-header">
-  <text class = "page-headerText">餐厅列表 </text>
-</view>
+<!--<view class = "page-header">
+  <text class = "page-headerText">Restaurants </text>
+</view>-->
 
 <scroll-view class = "page-body" scroll-y = "true">
-  <navigator url = "../info/info" wx:for = "restaurants" wx:for-item = "i"> 
+  <navigator url = "../info/info?id={{restaurants.id}}" wx:for = "{{restaurants}}" wx:for-item = "i"> 
     <view class = "item"> 
-      <image class = "page-photo" src = "{{restaurants[i].photo}}"> </image>
+      <image class = "page-photo" src = "{{i.photo}}"> </image>
       <view class = "page-word">
-        <text class = "title">{{" 餐厅名字："+restaurants[i].name}}</text>
-        <text class = "idNumber">{{" ID："+restaurants[i].id}}</text>
+
+        <text class = "title">{{i.name}}</text>
+        <text class = "idNumber">{{" ID："+i.id}}</text>
       </view>
     </view>
   </navigator>
