@@ -1,7 +1,51 @@
 <!--pages/info/info.wxml-->
-<scroll-view class = "info-body" scroll-y = "true">
-  <view class ="info-item">
-    <image class = "info-photo" src = "{{restaurants.photo}}"></image>
-    <text class = "info-name">{{"餐厅名字：" +restaurants.name}}</text>
+
+<!--
+<scroll-view class = "page-body" scroll-y = "true">
+  
+  <view class = "item"> 
+    <image class = "page-photo" src = "../image/icon.jpg"></image>
+    <view class = "page-word">
+
+      <text class = "title">{{"艾米emmy"}}</text>
+      <text class = "idNumber">{{"YJe5555"}}</text>
+    </view>
   </view>
+ 
 </scroll-view>
+-->
+
+<scroll-view class = "page-body" scroll-y = "true">
+  <!-->
+  <view class = "item"> 
+    <image class = "page-photo" src = "../image/icon.jpg"></image>
+    <view class = "page-word">
+
+      <text class = "title">{{"艾米emmy"}}</text>
+      <text class = "idNumber">{{"YJe5555"}}</text>
+    </view>
+  </view>
+  -->
+  <view class = "list">
+    <text class = "idNumber">{{"YJe5555"}}申请加入您发布的行程</text>
+    <text class = "origin">出发地：{{"Santa Barbara"}}</text>
+    <text class = "destination">目的地：{{"Los Angeles"}}</text>
+    <text class = "pickUp">接人地点：{{"UCSB Library"}}</text>
+    <text class = "dropOff">送人地点：{{"Temple City"}}</text>
+    <text class = "numPeople">人数：{{"2"}}</text>
+    <text class = "comments">备注：{{"hi~~"}}</text>
+    
+  </view>
+
+  <view class = 'bnt'>
+    <form bindAccept="acceptFunc" bindDecline="declineFunc">
+      
+      <button class="bnt1" size="mini" type="primary" form-type="acceptFunc">接受</button>
+      <button class="bnt2" size="mini" type="warn" form-type="declineFunc">拒绝</button>
+      
+      
+    </form> 
+  </view>
+ 
+</scroll-view>
+

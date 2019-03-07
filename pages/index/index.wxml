@@ -1,17 +1,46 @@
-<!--<view class = "page-header">
-  <text class = "page-headerText">Restaurants </text>
-</view>-->
+
+
 
 <scroll-view class = "page-body" scroll-y = "true">
-  <navigator url = "../info/info?id={{restaurants.id}}" wx:for = "{{restaurants}}" wx:for-item = "i"> 
+  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../decision/decision?id={{i.user_ID}}"> 
     <view class = "item"> 
       <image class = "page-photo" src = "{{i.photo}}"> </image>
+      
       <view class = "page-word">
 
-        <text class = "title">{{i.name}}</text>
-        <text class = "idNumber">{{" ID："+i.id}}</text>
+        <text class = "title">{{i.nick_name}}</text>
+        <text class = "idNumber">{{"WeChat ID："+i.wechatID}}</text>
       </view>
     </view>
   </navigator>
 </scroll-view>
 
+
+
+<!-- <scroll-view class = "page-body" scroll-y = "true">
+  <navigator url="..">
+  </navigator>
+  <view class = "item"> 
+    <image class = "page-photo" src = "../image/icon.jpg"></image>
+    <view class = "page-word">
+
+      <text class = "title">{{"艾米emmy"}}</text>
+      <text class = "idNumber">{{"YJe5555"}}</text>
+    </view>
+  
+  </view>
+
+  <view class="item">
+    <image class = "page-photo" src = "../image/csa.png"></image>
+    <view class = "page-word">
+
+      <text class = "title">{{"CSA技术组"}}</text>
+      <text class = "idNumber">{{"1234567"}}</text>
+    </view>
+
+
+
+
+  </view>
+ 
+</scroll-view> -->

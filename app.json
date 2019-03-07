@@ -1,13 +1,15 @@
  {
   "pages":[
     "pages/index/index",
+    "pages/decision/decision",
     "pages/info/info",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/myRide/myRide"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "Restaurants",
+    "navigationBarTitleText": "RideShare",
     "navigationBarTextStyle":"white"
   },
   "tabBar":{
@@ -16,15 +18,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "餐厅",
-        "iconPath": "images/restaurant.png",
-        "selectedIconPath": "images/restaurant.png"
+        "text": "主页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
       },
       {
         "pagePath": "pages/info/info",
-        "text": "详情",
-        "iconPath": "images/menu.png",
-        "selectedIconPath": "images/menu.png"
+        "text": "行程",
+        "iconPath": "images/trip.png",
+        "selectedIconPath": "images/trip.png"
         
       },
       {

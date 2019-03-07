@@ -1,0 +1,23 @@
+<scroll-view class = "page-body" scroll-y = "true">
+  
+  <view class = "list">
+    <text class = "idNumber">{{decision.nick_name}}申请加入您发布的行程</text>
+    <text class = "origin">出发地：{{decision.departure}}</text>
+    <text class = "destination">目的地：{{decision.destination}}</text>
+    <text class = "pickUp">接人地点：{{decision.pickUp}}</text>
+    <text class = "dropOff">送人地点：{{decision.dropOff}}</text>
+    <text class = "numPeople">人数：{{decision.numPeople}}</text>
+    <text class = "comments">备注：{{decision.comments}}</text>
+    
+  </view>
+
+  
+  <view class = 'bnt'>
+      
+    <button class="bnt1" size="mini" type="primary" bindtap="acceptFunc" >接受</button>
+    <button class="bnt2" size="mini" type="warn" bindtap="declineFunc" >拒绝</button>
+
+  </view>
+  
+ 
+</scroll-view>

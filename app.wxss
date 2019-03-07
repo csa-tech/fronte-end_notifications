@@ -67,7 +67,7 @@ page{
 }
 
 .item .idNumber{
-  font-size: 30rpx;
+  font-size: 35rpx;
   font-family: 'Times New Roman', Times, serif;
   margin-left: 20rpx;
   color:#999;
